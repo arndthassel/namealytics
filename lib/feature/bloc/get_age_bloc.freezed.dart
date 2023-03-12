@@ -18,33 +18,39 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$GetAgeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String name) getAgePressed,
+    required TResult Function() restartPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(String name)? getAgePressed,
+    TResult? Function()? restartPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String name)? getAgePressed,
+    TResult Function()? restartPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetAgePressed value) getAgePressed,
+    required TResult Function(_RestartPressed value) restartPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_GetAgePressed value)? getAgePressed,
+    TResult? Function(_RestartPressed value)? restartPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetAgePressed value)? getAgePressed,
+    TResult Function(_RestartPressed value)? restartPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -69,34 +75,168 @@ class _$GetAgeEventCopyWithImpl<$Res, $Val extends GetAgeEvent>
 }
 
 /// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
+abstract class _$$_GetAgePressedCopyWith<$Res> {
+  factory _$$_GetAgePressedCopyWith(
+          _$_GetAgePressed value, $Res Function(_$_GetAgePressed) then) =
+      __$$_GetAgePressedCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String name});
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$GetAgeEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
+class __$$_GetAgePressedCopyWithImpl<$Res>
+    extends _$GetAgeEventCopyWithImpl<$Res, _$_GetAgePressed>
+    implements _$$_GetAgePressedCopyWith<$Res> {
+  __$$_GetAgePressedCopyWithImpl(
+      _$_GetAgePressed _value, $Res Function(_$_GetAgePressed) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$_GetAgePressed(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Started implements _Started {
-  const _$_Started();
+class _$_GetAgePressed implements _GetAgePressed {
+  const _$_GetAgePressed(this.name);
+
+  @override
+  final String name;
 
   @override
   String toString() {
-    return 'GetAgeEvent.started()';
+    return 'GetAgeEvent.getAgePressed(name: $name)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
+        (other.runtimeType == runtimeType &&
+            other is _$_GetAgePressed &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_GetAgePressedCopyWith<_$_GetAgePressed> get copyWith =>
+      __$$_GetAgePressedCopyWithImpl<_$_GetAgePressed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String name) getAgePressed,
+    required TResult Function() restartPressed,
+  }) {
+    return getAgePressed(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String name)? getAgePressed,
+    TResult? Function()? restartPressed,
+  }) {
+    return getAgePressed?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String name)? getAgePressed,
+    TResult Function()? restartPressed,
+    required TResult orElse(),
+  }) {
+    if (getAgePressed != null) {
+      return getAgePressed(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetAgePressed value) getAgePressed,
+    required TResult Function(_RestartPressed value) restartPressed,
+  }) {
+    return getAgePressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetAgePressed value)? getAgePressed,
+    TResult? Function(_RestartPressed value)? restartPressed,
+  }) {
+    return getAgePressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetAgePressed value)? getAgePressed,
+    TResult Function(_RestartPressed value)? restartPressed,
+    required TResult orElse(),
+  }) {
+    if (getAgePressed != null) {
+      return getAgePressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetAgePressed implements GetAgeEvent {
+  const factory _GetAgePressed(final String name) = _$_GetAgePressed;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$_GetAgePressedCopyWith<_$_GetAgePressed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_RestartPressedCopyWith<$Res> {
+  factory _$$_RestartPressedCopyWith(
+          _$_RestartPressed value, $Res Function(_$_RestartPressed) then) =
+      __$$_RestartPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_RestartPressedCopyWithImpl<$Res>
+    extends _$GetAgeEventCopyWithImpl<$Res, _$_RestartPressed>
+    implements _$$_RestartPressedCopyWith<$Res> {
+  __$$_RestartPressedCopyWithImpl(
+      _$_RestartPressed _value, $Res Function(_$_RestartPressed) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_RestartPressed implements _RestartPressed {
+  const _$_RestartPressed();
+
+  @override
+  String toString() {
+    return 'GetAgeEvent.restartPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_RestartPressed);
   }
 
   @override
@@ -105,27 +245,30 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
+    required TResult Function(String name) getAgePressed,
+    required TResult Function() restartPressed,
   }) {
-    return started();
+    return restartPressed();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
+    TResult? Function(String name)? getAgePressed,
+    TResult? Function()? restartPressed,
   }) {
-    return started?.call();
+    return restartPressed?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
+    TResult Function(String name)? getAgePressed,
+    TResult Function()? restartPressed,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started();
+    if (restartPressed != null) {
+      return restartPressed();
     }
     return orElse();
   }
@@ -133,34 +276,37 @@ class _$_Started implements _Started {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
+    required TResult Function(_GetAgePressed value) getAgePressed,
+    required TResult Function(_RestartPressed value) restartPressed,
   }) {
-    return started(this);
+    return restartPressed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
+    TResult? Function(_GetAgePressed value)? getAgePressed,
+    TResult? Function(_RestartPressed value)? restartPressed,
   }) {
-    return started?.call(this);
+    return restartPressed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
+    TResult Function(_GetAgePressed value)? getAgePressed,
+    TResult Function(_RestartPressed value)? restartPressed,
     required TResult orElse(),
   }) {
-    if (started != null) {
-      return started(this);
+    if (restartPressed != null) {
+      return restartPressed(this);
     }
     return orElse();
   }
 }
 
-abstract class _Started implements GetAgeEvent {
-  const factory _Started() = _$_Started;
+abstract class _RestartPressed implements GetAgeEvent {
+  const factory _RestartPressed() = _$_RestartPressed;
 }
 
 /// @nodoc
