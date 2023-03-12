@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:namealytics/feature/bloc/get_age_bloc.dart';
 
 class InputWidget extends StatefulWidget {
   const InputWidget({super.key});
@@ -47,7 +49,9 @@ class _InputWidgetState extends State<InputWidget> {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,
                 child: OutlinedButton.icon(
-                  onPressed: () {},
+                  onPressed: () => context.read<GetAgeBloc>().add(
+                        const GetAgeEvent.restartPressed(),
+                      ),
                   icon: const Icon(Icons.restart_alt_rounded),
                   label: const Text('Restart'),
                 ),
@@ -55,7 +59,9 @@ class _InputWidgetState extends State<InputWidget> {
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.4,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () => context.read<GetAgeBloc>().add(
+                        GetAgeEvent.getAgePressed(name: _textController.text),
+                      ),
                   child: const Text('Get Age!'),
                 ),
               ),

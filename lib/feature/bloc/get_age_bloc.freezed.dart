@@ -97,7 +97,7 @@ class __$$_GetAgePressedCopyWithImpl<$Res>
     Object? name = null,
   }) {
     return _then(_$_GetAgePressed(
-      null == name
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
@@ -108,7 +108,7 @@ class __$$_GetAgePressedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GetAgePressed implements _GetAgePressed {
-  const _$_GetAgePressed(this.name);
+  const _$_GetAgePressed({required this.name});
 
   @override
   final String name;
@@ -199,7 +199,7 @@ class _$_GetAgePressed implements _GetAgePressed {
 }
 
 abstract class _GetAgePressed implements GetAgeEvent {
-  const factory _GetAgePressed(final String name) = _$_GetAgePressed;
+  const factory _GetAgePressed({required final String name}) = _$_GetAgePressed;
 
   String get name;
   @JsonKey(ignore: true)

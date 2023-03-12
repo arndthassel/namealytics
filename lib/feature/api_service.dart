@@ -7,6 +7,10 @@ class ApiService {
   static const String _baseUrl = 'https://api.agify.io?name=';
   final _httpClient = http.Client();
   Future<NameAnalysis> getAge(String name) async {
+    if (name.isEmpty || name == null) {
+      throw NoNameEnteredFailure();
+    }
+
     final request = Uri.https(_baseUrl + name);
     final response = await _httpClient.get(request);
 
@@ -23,6 +27,8 @@ class ApiService {
     return NameAnalysis(name: analysisJson['name'], age: analysisJson['age']);
   }
 }
+
+class NoNameEnteredFailure implements Exception {}
 
 class RequestFailure implements Exception {}
 
