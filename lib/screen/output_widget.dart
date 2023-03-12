@@ -14,14 +14,37 @@ class _OutputWidgetState extends State<OutputWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final mediaQuery = MediaQuery.of(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.45,
+      margin: EdgeInsets.symmetric(
+        horizontal: mediaQuery.size.width * 0.1,
+        vertical: mediaQuery.size.height * 0.075,
+      ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('People with this name are, on average,'),
-          Text(analysis.age),
-          const Text('years old.'),
+          Text(
+            'People with this name are, on average,',
+            style: theme.textTheme.headlineSmall,
+            textAlign: TextAlign.center,
+          ),
+          Expanded(
+            child: FittedBox(
+              fit: BoxFit.contain,
+              child: Text(
+                analysis.age,
+                style: TextStyle(fontSize: 300),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+          Text(
+            'years old.',
+            style: theme.textTheme.headlineSmall,
+            textAlign: TextAlign.center,
+          ),
         ],
       ),
     );

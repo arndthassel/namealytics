@@ -12,12 +12,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
+    final maxHeight = MediaQuery.of(context).size.height -
+        AppBar().preferredSize.height -
+        MediaQuery.of(context).padding.top;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Namealytics')),
       body: Container(
-        height: MediaQuery.of(context).size.height,
+        height: maxHeight,
         child: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
+          // physics: const NeverScrollableScrollPhysics(),
           child: Column(
             children: const [
               InputWidget(),
