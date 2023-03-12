@@ -1,7 +1,8 @@
 import 'dart:convert';
-
 import 'package:http/http.dart' as http;
 import 'package:namealytics/feature/data_model.dart';
+
+// Data Layer
 
 class ApiService {
   final _httpClient = http.Client();
