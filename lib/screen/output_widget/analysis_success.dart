@@ -9,12 +9,11 @@ class AnalysisSuccess extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.45,
-      
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'People with this name are, on average,',
+            'People named ${analysis.name.toUpperCase()} are, on average,',
             style: theme.textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ),
