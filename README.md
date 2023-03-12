@@ -14,6 +14,7 @@ Vielen Dank für die spannende Challenge!
 
 Angefangen: ca. 8.15 Uhr
 
+
 Ergebnis 14.15 Uhr (inklusive Pausen): 
 * App ist funktional (mit Dummy-Daten für GetAgeState.success())
 * UI steht (außer Error Handling).
