@@ -19,6 +19,15 @@ class _InputWidgetState extends State<InputWidget> {
     super.dispose();
   }
 
+  onSubmit() {
+    context.read<GetAgeBloc>().add(
+          GetAgeEvent.getAgePressed(
+            name: _textController.text,
+          ),
+        );
+    FocusManager.instance.primaryFocus?.unfocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -45,8 +54,7 @@ class _InputWidgetState extends State<InputWidget> {
               decoration: const InputDecoration(
                 hintText: 'e.g. Friederike',
               ),
-              onEditingComplete: () =>
-                  FocusManager.instance.primaryFocus?.unfocus(),
+              onEditingComplete: () => onSubmit(),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,11 +76,7 @@ class _InputWidgetState extends State<InputWidget> {
                   width: MediaQuery.of(context).size.width * 0.4,
                   child: ElevatedButton(
                     onPressed: () {
-                      context.read<GetAgeBloc>().add(
-                            GetAgeEvent.getAgePressed(
-                                name: _textController.text),
-                          );
-                      FocusManager.instance.primaryFocus?.unfocus();
+                      onSubmit();
                     },
                     child: const Text('Get Age!'),
                   ),
