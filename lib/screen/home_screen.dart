@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:namealytics/screen/input_widget.dart';
-import 'package:namealytics/screen/output_widget.dart';
+import 'package:namealytics/screen/output_widget/output_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
