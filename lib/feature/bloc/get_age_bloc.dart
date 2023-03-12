@@ -12,17 +12,20 @@ class GetAgeBloc extends Bloc<GetAgeEvent, GetAgeState> {
   GetAgeBloc() : super(const _Initial()) {
     on<GetAgeEvent>(
       (event, emit) async {
-        event.when(
+        await event.when<Future>(
           getAgePressed: (name) async {
             emit(const _Loading());
-            // NameAnalysis analysis = await apiService.getAge(name.trimRight()); // Getting an unsolvable error here, have to continue with dummy data
-            emit(
-              _Success(
-                result: NameAnalysis(name: 'dummy', age: '42'),
-              ),
+            await apiService.getAge(name.trimRight()).then(
+              (response) async {
+                emit(
+                  _Success(
+                    result: response,
+                  ),
+                );
+              },
             );
           },
-          restartPressed: () => emit(const _Initial()),
+          restartPressed: () async => emit(const _Initial()),
         );
       },
     );
