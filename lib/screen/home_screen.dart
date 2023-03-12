@@ -18,14 +18,14 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Namealytics')),
-      body: Container(
-        height: maxHeight,
-        child: SingleChildScrollView(
-          // physics: const NeverScrollableScrollPhysics(),
+      body: SingleChildScrollView(
+        // physics: const NeverScrollableScrollPhysics(),
+        child: Container(
+          height: maxHeight,
           child: Column(
-            children: const [
-              InputWidget(),
-              OutputWidget(),
+            children: [
+              InputWidget(maxHeight: maxHeight),
+              OutputWidget(maxHeight: maxHeight),
             ],
           ),
         ),

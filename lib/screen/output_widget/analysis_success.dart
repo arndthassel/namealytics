@@ -7,13 +7,9 @@ class AnalysisSuccess extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final mediaQuery = MediaQuery.of(context);
     return Container(
       height: MediaQuery.of(context).size.height * 0.45,
-      margin: EdgeInsets.symmetric(
-        horizontal: mediaQuery.size.width * 0.1,
-        vertical: mediaQuery.size.height * 0.075,
-      ),
+      
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

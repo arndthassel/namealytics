@@ -5,7 +5,8 @@ import 'package:namealytics/feature/data_model.dart';
 import 'package:namealytics/screen/output_widget/analysis_success.dart';
 
 class OutputWidget extends StatefulWidget {
-  const OutputWidget({super.key});
+  const OutputWidget({super.key, required this.maxHeight});
+  final double maxHeight;
 
   @override
   State<OutputWidget> createState() => _OutputWidgetState();
@@ -16,18 +17,27 @@ class _OutputWidgetState extends State<OutputWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<GetAgeBloc, GetAgeState>(
-      builder: (context, state) {
-        return state.when(
-          initial: () =>
-              Container(), // initially, there is no output, so we use an empty container
-          loading: () => const CircularProgressIndicator(),
-          failure: (exception) => const Text('Failure'),
-          success: (NameAnalysis analysis) =>
-              AnalysisSuccess(analysis: analysis),
-        );
-      },
+    final mediaQuery = MediaQuery.of(context);
+    return Container(
+      height: widget.maxHeight * 0.6,
+      padding: EdgeInsets.fromLTRB(
+        mediaQuery.size.width * 0.1,
+        widget.maxHeight * 0.05,
+        mediaQuery.size.width * 0.1,
+        widget.maxHeight * 0.05,
+      ),
+      child: BlocBuilder<GetAgeBloc, GetAgeState>(
+        builder: (context, state) {
+          return state.when(
+            initial: () =>
+                Container(), // initially, there is no output, so we use an empty container
+            loading: () => const CircularProgressIndicator(),
+            failure: (exception) => const Text('Failure'),
+            success: (NameAnalysis analysis) =>
+                AnalysisSuccess(analysis: analysis),
+          );
+        },
+      ),
     );
-    ;
   }
 }
