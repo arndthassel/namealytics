@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:namealytics/feature/data_model.dart';
 
 class AnalysisSuccess extends StatelessWidget {
-  AnalysisSuccess({required this.result});
+  const AnalysisSuccess({super.key, required this.result});
   final NameAnalysis result;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
+    return SizedBox(
       height: MediaQuery.of(context).size.height * 0.45,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

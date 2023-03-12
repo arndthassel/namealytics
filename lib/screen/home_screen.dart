@@ -20,7 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(title: const Text('Namealytics')),
       body: SingleChildScrollView(
         // physics: const NeverScrollableScrollPhysics(),
-        child: Container(
+        child: SizedBox(
           height: maxHeight,
           child: Column(
             children: [

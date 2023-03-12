@@ -7,6 +7,7 @@ class ApiService {
   final _httpClient = http.Client();
 
   Future<NameAnalysis> getAge(String name) async {
+    // ignore: unnecessary_null_comparison
     if (name.isEmpty || name == null) {
       throw NoNameEnteredFailure();
     }
@@ -25,7 +26,9 @@ class ApiService {
     }
 
     return NameAnalysis(
-        name: analysisJson['name'], age: analysisJson['age'].toString());
+      name: analysisJson['name'],
+      age: analysisJson['age'].toString(),
+    );
   }
 }
 

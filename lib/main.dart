@@ -9,7 +9,11 @@ void main() {
   Bloc.observer = NamealyticsBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+    [
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ],
+  );
   runApp(
     MultiBlocProvider(
       providers: [
@@ -37,4 +41,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

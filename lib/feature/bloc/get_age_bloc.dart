@@ -36,19 +36,23 @@ class GetAgeBloc extends Bloc<GetAgeEvent, GetAgeState> {
       );
     } on NoNameEnteredFailure {
       emit(
-        const _Failure(message: 'Please enter a name!'),
+        const _Failure(
+          message: 'Please enter a name!',
+        ),
       );
     } on RequestFailure {
       emit(
         const _Failure(
-            message:
-                'The service is not available at the moment. Please try again later.'),
+          message:
+              'The service is not available at the moment. Please try again later.',
+        ),
       );
     } on NameNotFoundFailure {
       emit(
         const _Failure(
-            message:
-                'We have no data available for this name. Please try another name.'),
+          message:
+              'We have no data available for this name. Please try another name.',
+        ),
       );
     }
   }
