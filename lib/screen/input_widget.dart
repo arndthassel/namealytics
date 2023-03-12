@@ -24,10 +24,10 @@ class _InputWidgetState extends State<InputWidget> {
       height: mediaQuery.size.height * 0.3,
       margin: EdgeInsets.symmetric(
         horizontal: mediaQuery.size.width * 0.1,
-        vertical: mediaQuery.size.height * 0.1,
+        vertical: mediaQuery.size.height * 0.075,
       ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             'Which name would you like to analyze?',
@@ -42,7 +42,7 @@ class _InputWidgetState extends State<InputWidget> {
             ),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SizedBox(
                 width: MediaQuery.of(context).size.width * 0.3,

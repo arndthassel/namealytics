@@ -14,8 +14,17 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Namealytics')),
-      body: Column(
-        children: const [InputWidget(), OutputWidget()],
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        child: SingleChildScrollView(
+          physics: const NeverScrollableScrollPhysics(),
+          child: Column(
+            children: const [
+              InputWidget(),
+              OutputWidget(),
+            ],
+          ),
+        ),
       ),
     );
   }
