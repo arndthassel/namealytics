@@ -4,14 +4,14 @@ import 'package:http/http.dart' as http;
 import 'package:namealytics/feature/data_model.dart';
 
 class ApiService {
-  static const String _baseUrl = 'https://api.agify.io?name=';
   final _httpClient = http.Client();
+
   Future<NameAnalysis> getAge(String name) async {
     if (name.isEmpty || name == null) {
       throw NoNameEnteredFailure();
     }
 
-    final request = Uri.https(_baseUrl + name);
+    final request = Uri.parse('https://api.agify.io?name=$name');
     final response = await _httpClient.get(request);
 
     if (response.statusCode != 200) {
@@ -24,7 +24,8 @@ class ApiService {
       throw NameNotFoundFailure();
     }
 
-    return NameAnalysis(name: analysisJson['name'], age: analysisJson['age']);
+    return NameAnalysis(
+        name: analysisJson['name'], age: analysisJson['age'].toString());
   }
 }
 

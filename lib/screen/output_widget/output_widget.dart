@@ -19,7 +19,8 @@ class _OutputWidgetState extends State<OutputWidget> {
     return BlocBuilder<GetAgeBloc, GetAgeState>(
       builder: (context, state) {
         return state.when(
-          initial: () => const CircularProgressIndicator(),
+          initial: () =>
+              Container(), // initially, there is no output, so we use an empty container
           loading: () => const CircularProgressIndicator(),
           failure: (exception) => const Text('Failure'),
           success: (NameAnalysis analysis) =>

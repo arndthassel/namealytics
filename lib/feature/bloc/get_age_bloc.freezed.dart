@@ -316,7 +316,7 @@ mixin _$GetAgeState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Exception exception) failure,
-    required TResult Function(NameAnalysis analysis) success,
+    required TResult Function(NameAnalysis result) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -324,7 +324,7 @@ mixin _$GetAgeState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(Exception exception)? failure,
-    TResult? Function(NameAnalysis analysis)? success,
+    TResult? Function(NameAnalysis result)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -332,7 +332,7 @@ mixin _$GetAgeState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Exception exception)? failure,
-    TResult Function(NameAnalysis analysis)? success,
+    TResult Function(NameAnalysis result)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -421,7 +421,7 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Exception exception) failure,
-    required TResult Function(NameAnalysis analysis) success,
+    required TResult Function(NameAnalysis result) success,
   }) {
     return initial();
   }
@@ -432,7 +432,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(Exception exception)? failure,
-    TResult? Function(NameAnalysis analysis)? success,
+    TResult? Function(NameAnalysis result)? success,
   }) {
     return initial?.call();
   }
@@ -443,7 +443,7 @@ class _$_Initial implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Exception exception)? failure,
-    TResult Function(NameAnalysis analysis)? success,
+    TResult Function(NameAnalysis result)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -534,7 +534,7 @@ class _$_Loading implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Exception exception) failure,
-    required TResult Function(NameAnalysis analysis) success,
+    required TResult Function(NameAnalysis result) success,
   }) {
     return loading();
   }
@@ -545,7 +545,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(Exception exception)? failure,
-    TResult? Function(NameAnalysis analysis)? success,
+    TResult? Function(NameAnalysis result)? success,
   }) {
     return loading?.call();
   }
@@ -556,7 +556,7 @@ class _$_Loading implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Exception exception)? failure,
-    TResult Function(NameAnalysis analysis)? success,
+    TResult Function(NameAnalysis result)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -674,7 +674,7 @@ class _$_Failure implements _Failure {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Exception exception) failure,
-    required TResult Function(NameAnalysis analysis) success,
+    required TResult Function(NameAnalysis result) success,
   }) {
     return failure(exception);
   }
@@ -685,7 +685,7 @@ class _$_Failure implements _Failure {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(Exception exception)? failure,
-    TResult? Function(NameAnalysis analysis)? success,
+    TResult? Function(NameAnalysis result)? success,
   }) {
     return failure?.call(exception);
   }
@@ -696,7 +696,7 @@ class _$_Failure implements _Failure {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Exception exception)? failure,
-    TResult Function(NameAnalysis analysis)? success,
+    TResult Function(NameAnalysis result)? success,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -758,7 +758,7 @@ abstract class _$$_SuccessCopyWith<$Res> {
           _$_Success value, $Res Function(_$_Success) then) =
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({NameAnalysis analysis});
+  $Res call({NameAnalysis result});
 }
 
 /// @nodoc
@@ -771,12 +771,12 @@ class __$$_SuccessCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? analysis = null,
+    Object? result = null,
   }) {
     return _then(_$_Success(
-      analysis: null == analysis
-          ? _value.analysis
-          : analysis // ignore: cast_nullable_to_non_nullable
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
               as NameAnalysis,
     ));
   }
@@ -785,14 +785,14 @@ class __$$_SuccessCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Success implements _Success {
-  const _$_Success({required this.analysis});
+  const _$_Success({required this.result});
 
   @override
-  final NameAnalysis analysis;
+  final NameAnalysis result;
 
   @override
   String toString() {
-    return 'GetAgeState.success(analysis: $analysis)';
+    return 'GetAgeState.success(result: $result)';
   }
 
   @override
@@ -800,12 +800,11 @@ class _$_Success implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Success &&
-            (identical(other.analysis, analysis) ||
-                other.analysis == analysis));
+            (identical(other.result, result) || other.result == result));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, analysis);
+  int get hashCode => Object.hash(runtimeType, result);
 
   @JsonKey(ignore: true)
   @override
@@ -819,9 +818,9 @@ class _$_Success implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(Exception exception) failure,
-    required TResult Function(NameAnalysis analysis) success,
+    required TResult Function(NameAnalysis result) success,
   }) {
-    return success(analysis);
+    return success(result);
   }
 
   @override
@@ -830,9 +829,9 @@ class _$_Success implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(Exception exception)? failure,
-    TResult? Function(NameAnalysis analysis)? success,
+    TResult? Function(NameAnalysis result)? success,
   }) {
-    return success?.call(analysis);
+    return success?.call(result);
   }
 
   @override
@@ -841,11 +840,11 @@ class _$_Success implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(Exception exception)? failure,
-    TResult Function(NameAnalysis analysis)? success,
+    TResult Function(NameAnalysis result)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(analysis);
+      return success(result);
     }
     return orElse();
   }
@@ -889,9 +888,9 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements GetAgeState {
-  const factory _Success({required final NameAnalysis analysis}) = _$_Success;
+  const factory _Success({required final NameAnalysis result}) = _$_Success;
 
-  NameAnalysis get analysis;
+  NameAnalysis get result;
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
