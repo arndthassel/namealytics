@@ -315,6 +315,7 @@ mixin _$GetAgeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(Exception exception) failure,
     required TResult Function(NameAnalysis analysis) success,
   }) =>
       throw _privateConstructorUsedError;
@@ -322,6 +323,7 @@ mixin _$GetAgeState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(Exception exception)? failure,
     TResult? Function(NameAnalysis analysis)? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -329,6 +331,7 @@ mixin _$GetAgeState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(Exception exception)? failure,
     TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) =>
@@ -337,6 +340,7 @@ mixin _$GetAgeState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_Success value) success,
   }) =>
       throw _privateConstructorUsedError;
@@ -344,6 +348,7 @@ mixin _$GetAgeState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_Success value)? success,
   }) =>
       throw _privateConstructorUsedError;
@@ -351,6 +356,7 @@ mixin _$GetAgeState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) =>
@@ -414,6 +420,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(Exception exception) failure,
     required TResult Function(NameAnalysis analysis) success,
   }) {
     return initial();
@@ -424,6 +431,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(Exception exception)? failure,
     TResult? Function(NameAnalysis analysis)? success,
   }) {
     return initial?.call();
@@ -434,6 +442,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(Exception exception)? failure,
     TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) {
@@ -448,6 +457,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_Success value) success,
   }) {
     return initial(this);
@@ -458,6 +468,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_Success value)? success,
   }) {
     return initial?.call(this);
@@ -468,6 +479,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
@@ -521,6 +533,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(Exception exception) failure,
     required TResult Function(NameAnalysis analysis) success,
   }) {
     return loading();
@@ -531,6 +544,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(Exception exception)? failure,
     TResult? Function(NameAnalysis analysis)? success,
   }) {
     return loading?.call();
@@ -541,6 +555,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(Exception exception)? failure,
     TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) {
@@ -555,6 +570,7 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_Success value) success,
   }) {
     return loading(this);
@@ -565,6 +581,7 @@ class _$_Loading implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_Success value)? success,
   }) {
     return loading?.call(this);
@@ -575,6 +592,7 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
@@ -587,6 +605,151 @@ class _$_Loading implements _Loading {
 
 abstract class _Loading implements GetAgeState {
   const factory _Loading() = _$_Loading;
+}
+
+/// @nodoc
+abstract class _$$_FailureCopyWith<$Res> {
+  factory _$$_FailureCopyWith(
+          _$_Failure value, $Res Function(_$_Failure) then) =
+      __$$_FailureCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Exception exception});
+}
+
+/// @nodoc
+class __$$_FailureCopyWithImpl<$Res>
+    extends _$GetAgeStateCopyWithImpl<$Res, _$_Failure>
+    implements _$$_FailureCopyWith<$Res> {
+  __$$_FailureCopyWithImpl(_$_Failure _value, $Res Function(_$_Failure) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? exception = null,
+  }) {
+    return _then(_$_Failure(
+      exception: null == exception
+          ? _value.exception
+          : exception // ignore: cast_nullable_to_non_nullable
+              as Exception,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Failure implements _Failure {
+  const _$_Failure({required this.exception});
+
+  @override
+  final Exception exception;
+
+  @override
+  String toString() {
+    return 'GetAgeState.failure(exception: $exception)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Failure &&
+            (identical(other.exception, exception) ||
+                other.exception == exception));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, exception);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+      __$$_FailureCopyWithImpl<_$_Failure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(Exception exception) failure,
+    required TResult Function(NameAnalysis analysis) success,
+  }) {
+    return failure(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(Exception exception)? failure,
+    TResult? Function(NameAnalysis analysis)? success,
+  }) {
+    return failure?.call(exception);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(Exception exception)? failure,
+    TResult Function(NameAnalysis analysis)? success,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(exception);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_Success value) success,
+  }) {
+    return failure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_Success value)? success,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Success value)? success,
+    required TResult orElse(),
+  }) {
+    if (failure != null) {
+      return failure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Failure implements GetAgeState {
+  const factory _Failure({required final Exception exception}) = _$_Failure;
+
+  Exception get exception;
+  @JsonKey(ignore: true)
+  _$$_FailureCopyWith<_$_Failure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -655,6 +818,7 @@ class _$_Success implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function(Exception exception) failure,
     required TResult Function(NameAnalysis analysis) success,
   }) {
     return success(analysis);
@@ -665,6 +829,7 @@ class _$_Success implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
+    TResult? Function(Exception exception)? failure,
     TResult? Function(NameAnalysis analysis)? success,
   }) {
     return success?.call(analysis);
@@ -675,6 +840,7 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function(Exception exception)? failure,
     TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) {
@@ -689,6 +855,7 @@ class _$_Success implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Failure value) failure,
     required TResult Function(_Success value) success,
   }) {
     return success(this);
@@ -699,6 +866,7 @@ class _$_Success implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
+    TResult? Function(_Failure value)? failure,
     TResult? Function(_Success value)? success,
   }) {
     return success?.call(this);
@@ -709,6 +877,7 @@ class _$_Success implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Failure value)? failure,
     TResult Function(_Success value)? success,
     required TResult orElse(),
   }) {
