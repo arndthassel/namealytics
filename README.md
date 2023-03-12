@@ -14,3 +14,4 @@ Ergebnis nach 6h:
 * UI steht (außer Error Handling).
 * Blocker beim Async Event Handling in get_age_bloc.dart: (Aufgetreten nach ca. 5h)
 * Deswegen leider nicht mehr zur Implementierung des Error Handling gekommen.
+* Lösungsversuch siehe Branch 'fix_asyn_event_handling'.
