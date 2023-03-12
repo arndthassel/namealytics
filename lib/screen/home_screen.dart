@@ -13,9 +13,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: const Text('Namealytics')),
-        body: Column(
-          children: const [InputWidget(), OutputWidget()],
-        ));
+      appBar: AppBar(title: const Text('Namealytics')),
+      body: Column(
+        children: const [InputWidget(), OutputWidget()],
+      ),
+    );
   }
 }
