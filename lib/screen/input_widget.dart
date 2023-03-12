@@ -18,30 +18,46 @@ class _InputWidgetState extends State<InputWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final mediaQuery = MediaQuery.of(context);
     return Container(
-      height: MediaQuery.of(context).size.height * 0.3,
+      height: mediaQuery.size.height * 0.3,
+      margin: EdgeInsets.symmetric(
+        horizontal: mediaQuery.size.width * 0.1,
+        vertical: mediaQuery.size.height * 0.1,
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8),
-            child: TextField(
-              controller: _textController,
-              decoration: const InputDecoration(
-                labelText: 'Name',
-                hintText: 'e.g. Friederike',
-              ),
+          Text(
+            'Which name would you like to analyze?',
+            style: theme.textTheme.headlineSmall,
+            textAlign: TextAlign.center,
+          ),
+          TextField(
+            controller: _textController,
+            decoration: const InputDecoration(
+              labelText: 'Name',
+              hintText: 'e.g. Friederike',
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.restart_alt_rounded),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.3,
+                child: OutlinedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.restart_alt_rounded),
+                  label: const Text('Restart'),
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {},
-                child: const Text('Get Age!'),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.4,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: const Text('Get Age!'),
+                ),
               ),
             ],
           )
