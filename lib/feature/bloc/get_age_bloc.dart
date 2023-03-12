@@ -15,10 +15,10 @@ class GetAgeBloc extends Bloc<GetAgeEvent, GetAgeState> {
         event.when(
           getAgePressed: (name) async {
             emit(const _Loading());
-            NameAnalysis response;
-
             // This is not working, but I don't know why :(
+
             // Option 1:
+            // NameAnalysis response;
 
             /* response = await apiService.getAge(name.trimRight()); 
             emit(
@@ -29,13 +29,15 @@ class GetAgeBloc extends Bloc<GetAgeEvent, GetAgeState> {
 
             // Option 2:
             await apiService.getAge(name.trimRight()).then(
-                  (response) => emit(
-                    _Success(
-                      result:
-                          NameAnalysis(name: response.name, age: response.age),
-                    ),
+              (response) {
+                emit(
+                  _Success(
+                    result:
+                        NameAnalysis(name: response.name, age: response.age),
                   ),
                 );
+              },
+            );
           },
           restartPressed: () => emit(const _Initial()),
         );
