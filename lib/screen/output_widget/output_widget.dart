@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:namealytics/feature/bloc/get_age_bloc.dart';
 import 'package:namealytics/feature/data_model.dart';
+import 'package:namealytics/progress_indicator.dart';
 import 'package:namealytics/screen/output_widget/analysis_success.dart';
 
 class OutputWidget extends StatefulWidget {
@@ -31,10 +32,9 @@ class _OutputWidgetState extends State<OutputWidget> {
           return state.when(
             initial: () =>
                 Container(), // initially, there is no output, so we use an empty container
-            loading: () => const CircularProgressIndicator(),
-            failure: (exception) => const Text('Failure'),
-            success: (NameAnalysis analysis) =>
-                AnalysisSuccess(analysis: analysis),
+            loading: () => CustomProgressIndicator(),
+            failure: (message) => Text(message),
+            success: (NameAnalysis result) => AnalysisSuccess(result: result),
           );
         },
       ),

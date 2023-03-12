@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:namealytics/bloc_observer.dart';
 import 'package:namealytics/feature/bloc/get_age_bloc.dart';
 import 'package:namealytics/screen/home_screen.dart';
@@ -6,7 +7,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   Bloc.observer = NamealyticsBlocObserver();
-
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(
     MultiBlocProvider(
       providers: [
@@ -34,3 +37,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

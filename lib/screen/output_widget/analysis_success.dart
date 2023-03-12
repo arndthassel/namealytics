@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:namealytics/feature/data_model.dart';
 
 class AnalysisSuccess extends StatelessWidget {
-  AnalysisSuccess({required this.analysis});
-  final NameAnalysis analysis;
+  AnalysisSuccess({required this.result});
+  final NameAnalysis result;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -13,7 +13,7 @@ class AnalysisSuccess extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            'People named ${analysis.name.toUpperCase()} are, on average,',
+            'People named ${result.name.toUpperCase()} are, on average,',
             style: theme.textTheme.headlineSmall,
             textAlign: TextAlign.center,
           ),
@@ -21,7 +21,7 @@ class AnalysisSuccess extends StatelessWidget {
             child: FittedBox(
               fit: BoxFit.contain,
               child: Text(
-                analysis.age,
+                result.age,
                 style: const TextStyle(fontSize: 300),
                 textAlign: TextAlign.center,
               ),
