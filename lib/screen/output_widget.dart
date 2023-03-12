@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:namealytics/feature/name_analysis_model.dart';
+import 'package:namealytics/feature/data_model.dart';
 
 class OutputWidget extends StatefulWidget {
   const OutputWidget({super.key});
@@ -9,8 +9,7 @@ class OutputWidget extends StatefulWidget {
 }
 
 class _OutputWidgetState extends State<OutputWidget> {
-  NameAnalysisModel analysis =
-      const NameAnalysisModel(age: 'dummy', name: 'dummy');
+  NameAnalysis analysis = const NameAnalysis(age: 'dummy', name: 'dummy');
 
   @override
   Widget build(BuildContext context) {

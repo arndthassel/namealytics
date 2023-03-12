@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:namealytics/feature/name_analysis_model.dart';
+import 'package:namealytics/feature/data_model.dart';
 
 part 'get_age_event.dart';
 part 'get_age_state.dart';

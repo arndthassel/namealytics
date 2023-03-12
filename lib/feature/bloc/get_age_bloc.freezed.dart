@@ -169,21 +169,21 @@ mixin _$GetAgeState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NameAnalysisModel analysis) success,
+    required TResult Function(NameAnalysis analysis) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NameAnalysisModel analysis)? success,
+    TResult? Function(NameAnalysis analysis)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NameAnalysisModel analysis)? success,
+    TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -268,7 +268,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NameAnalysisModel analysis) success,
+    required TResult Function(NameAnalysis analysis) success,
   }) {
     return initial();
   }
@@ -278,7 +278,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NameAnalysisModel analysis)? success,
+    TResult? Function(NameAnalysis analysis)? success,
   }) {
     return initial?.call();
   }
@@ -288,7 +288,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NameAnalysisModel analysis)? success,
+    TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -375,7 +375,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NameAnalysisModel analysis) success,
+    required TResult Function(NameAnalysis analysis) success,
   }) {
     return loading();
   }
@@ -385,7 +385,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NameAnalysisModel analysis)? success,
+    TResult? Function(NameAnalysis analysis)? success,
   }) {
     return loading?.call();
   }
@@ -395,7 +395,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NameAnalysisModel analysis)? success,
+    TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -449,7 +449,7 @@ abstract class _$$_SuccessCopyWith<$Res> {
           _$_Success value, $Res Function(_$_Success) then) =
       __$$_SuccessCopyWithImpl<$Res>;
   @useResult
-  $Res call({NameAnalysisModel analysis});
+  $Res call({NameAnalysis analysis});
 }
 
 /// @nodoc
@@ -468,7 +468,7 @@ class __$$_SuccessCopyWithImpl<$Res>
       analysis: null == analysis
           ? _value.analysis
           : analysis // ignore: cast_nullable_to_non_nullable
-              as NameAnalysisModel,
+              as NameAnalysis,
     ));
   }
 }
@@ -479,7 +479,7 @@ class _$_Success implements _Success {
   const _$_Success({required this.analysis});
 
   @override
-  final NameAnalysisModel analysis;
+  final NameAnalysis analysis;
 
   @override
   String toString() {
@@ -509,7 +509,7 @@ class _$_Success implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(NameAnalysisModel analysis) success,
+    required TResult Function(NameAnalysis analysis) success,
   }) {
     return success(analysis);
   }
@@ -519,7 +519,7 @@ class _$_Success implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(NameAnalysisModel analysis)? success,
+    TResult? Function(NameAnalysis analysis)? success,
   }) {
     return success?.call(analysis);
   }
@@ -529,7 +529,7 @@ class _$_Success implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(NameAnalysisModel analysis)? success,
+    TResult Function(NameAnalysis analysis)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -574,10 +574,9 @@ class _$_Success implements _Success {
 }
 
 abstract class _Success implements GetAgeState {
-  const factory _Success({required final NameAnalysisModel analysis}) =
-      _$_Success;
+  const factory _Success({required final NameAnalysis analysis}) = _$_Success;
 
-  NameAnalysisModel get analysis;
+  NameAnalysis get analysis;
   @JsonKey(ignore: true)
   _$$_SuccessCopyWith<_$_Success> get copyWith =>
       throw _privateConstructorUsedError;
