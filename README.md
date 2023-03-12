@@ -2,8 +2,6 @@
 
 Vielen Dank für die spannende Challenge! 
 
-
-
 ## Hinweise
 
 * Optimiert für Android
