@@ -16,19 +16,21 @@ class GetAgeBloc extends Bloc<GetAgeEvent, GetAgeState> {
           getAgePressed: (name) async {
             await getAgePressed(event, emit, name);
           },
-          restartPressed: () async => emit(const _Initial()),
+          restartPressed: () async => emit(const GetAgeState.initial()),
         );
       },
     );
   }
 
   getAgePressed(event, emit, name) async {
-    emit(const _Loading());
+    emit(
+      const GetAgeState.loading(),
+    );
     try {
       await apiService.getAge(name.trimRight()).then(
         (response) async {
           emit(
-            _Success(
+            GetAgeState.success(
               result: response,
             ),
           );
@@ -36,20 +38,20 @@ class GetAgeBloc extends Bloc<GetAgeEvent, GetAgeState> {
       );
     } on NoNameEnteredFailure {
       emit(
-        const _Failure(
+        const GetAgeState.failure(
           message: 'Please enter a name!',
         ),
       );
     } on RequestFailure {
       emit(
-        const _Failure(
+        const GetAgeState.failure(
           message:
               'The service is not available at the moment. Please try again later.',
         ),
       );
     } on NameNotFoundFailure {
       emit(
-        const _Failure(
+        const GetAgeState.failure(
           message:
               'We have no data available for this name. Please try another name.',
         ),
